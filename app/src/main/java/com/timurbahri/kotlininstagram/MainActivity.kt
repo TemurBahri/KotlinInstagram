@@ -34,12 +34,12 @@ class MainActivity : AppCompatActivity() {
     fun signInClicked (view:View) {
 
         val email = binding.emailText.text.toString()
-        val passoword = binding.passwordText.text.toString()
+        val password = binding.passwordText.text.toString()
 
-        if (email.equals("") || passoword.equals("")) {
+        if (email.equals("") || password.equals("")) {
             Toast.makeText(this,"Email veya Şifre giriniz",Toast.LENGTH_SHORT).show()
         } else {
-            auth.signInWithEmailAndPassword(email,passoword).addOnSuccessListener {
+            auth.signInWithEmailAndPassword(email,password).addOnSuccessListener {
                 val intent = Intent(this@MainActivity,FeedActivity::class.java)
                 startActivity(intent)
                 finish()
